@@ -31,6 +31,8 @@ before_script:
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
+  - export CXXFLAGS="-g -O0 --coverage"
+  - export LDFLAGS="--coverage"
   - mkdir -p build && cd build
   - |
     cmake .. \
