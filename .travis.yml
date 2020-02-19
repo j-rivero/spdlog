@@ -50,7 +50,7 @@ script:
 ter_script:
   # Create lcov report
   - lcov --capture --initial --directory .. -o app_base.info
-  - lcov --capture --directory . --output-file coverage.info
+  - lcov --capture --rc lcov_branch_coverage=0 --directory . --output-file coverage.info
   - lcov --remove app_base.info */tests/* */example/* --output-file app_base.info
   - lcov --remove coverage.info */tests/* */example/* --output-file coverage.info
   - lcov -a app_base.info -a coverage.info -o coverage.info
